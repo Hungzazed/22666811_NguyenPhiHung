@@ -1,21 +1,25 @@
 import React from "react"
 class Contact extends React.Component{
-    
+    constructor(props){
+        super(props)
+    }
     render() {
-        const {contactDetail, deleteElement} = this.props
         return (
-            <div style={{width:'200px', height:'300px', border:'1px solid'}}>
-                <h1>{contactDetail.firstName}</h1>
-                <h4>{contactDetail.lastName}</h4>
-                <hr />
-                <h4>Phone: {contactDetail.phone}</h4>
-                <hr />
-                <h4>Address: {contactDetail.address}</h4>
-                <hr />
-                <div className="list-group-item text-end">
-                  <button className="btn btn-danger" onClick={() => {deleteElement(contactDetail.key)}}>Delete</button>
-                </div>
-            </div>
+            <div style={{ width: '250px'}}>
+              <div style={{ border: '1px solid gray', padding: '5px' }}>
+                <h1>{this.props.contactDetail.firstName}</h1>
+                <h4>{this.props.contactDetail.lastName}</h4>
+              </div>
+              <div style={{ border: '1px solid gray', padding: '5px' }}>
+                <h4>Phone: {this.props.contactDetail.phone}</h4>
+              </div>
+              <div style={{ border: '1px solid gray', padding: '5px' }}>
+                <h4>Address: {this.props.contactDetail.address}</h4>
+              </div>
+              <div className="list-group-item text-end" style={{ border: '1px solid gray', padding: '5px', display: 'flex', justifyContent: 'right' }}>
+                    <button style={{backgroundColor: 'red', color: 'white', padding: '5px', borderRadius: '5px', border: '1px solid'}} className="btn btn-danger" onClick={() => {this.props.deleteElement(this.props.contactDetail.key)}}>Delete</button>
+              </div>
+          </div>
         )
     }
 }

@@ -1,5 +1,5 @@
 import Contact from "./Contact"
-function App() {
+const App = () => {
   const chidi = {
     firstName: 'Chidi',
     lastName: 'Anagonye',
